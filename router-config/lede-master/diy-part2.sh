@@ -43,6 +43,8 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-th
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall-packages
 git clone https://github.com/kenzok8/openwrt-packages.git package
 
+git clone https://github.com/helmiau/helmiwrt-packages.git package
+
 # Fix runc version error
 # rm -rf ./feeds/packages/utils/runc/Makefile
 # svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
