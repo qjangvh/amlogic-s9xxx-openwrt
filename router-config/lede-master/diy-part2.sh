@@ -36,14 +36,11 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 
 # Add p7zip
 svn co https://github.com/hubutui/p7zip-lede/trunk package/p7zip
-
-rm -rf package/lean/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
-
+# Add passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall-packages
-git clone https://github.com/kenzok8/openwrt-packages.git package
-
-git clone https://github.com/helmiau/helmiwrt-packages.git package
+git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
+# Add helmiwrt
+git clone https://github.com/helmiau/helmiwrt-packages.git package/helmiwrt-packages
 
 # Fix runc version error
 # rm -rf ./feeds/packages/utils/runc/Makefile
