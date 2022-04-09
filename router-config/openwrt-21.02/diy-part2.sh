@@ -19,7 +19,7 @@ sed -i "s|DISTRIB_REVISION='.*'|DISTRIB_REVISION='R$(date +%Y.%m.%d)'|g" package
 echo "DISTRIB_SOURCECODE='openwrt'" >>package/base-files/files/etc/openwrt_release
 
 # Modify default IP（FROM 192.168.1.1 CHANGE TO 192.168.31.4）
-# sed -i 's/192.168.1.1/192.168.31.4/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 #
 # ------------------------------- Main source ends -------------------------------
@@ -33,7 +33,13 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk package/luci-app-amlogic
 svn co https://github.com/hubutui/p7zip-lede/trunk package/lean/p7zip
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
+rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
+
+rm -rf package/lean/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+
 git clone https://github.com/helmiau/helmiwrt-packages.git package/helmiwrt-packages
+
 # coolsnowwolf default software package replaced with Lienol related software package
 # rm -rf feeds/packages/utils/{containerd,libnetwork,runc,tini}
 # svn co https://github.com/Lienol/openwrt-packages/trunk/utils/{containerd,libnetwork,runc,tini} feeds/packages/utils
