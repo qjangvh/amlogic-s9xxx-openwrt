@@ -39,8 +39,6 @@ svn co https://github.com/hubutui/p7zip-lede/trunk package/p7zip
 # Add passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall-packages
 git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
-# Add helmiwrt
-git clone https://github.com/helmiau/helmiwrt-packages.git package/helmiwrt-packages
 
 # Fix runc version error
 # rm -rf ./feeds/packages/utils/runc/Makefile
