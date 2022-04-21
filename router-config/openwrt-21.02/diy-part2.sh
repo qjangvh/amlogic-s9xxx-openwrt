@@ -34,8 +34,14 @@ svn co https://github.com/hubutui/p7zip-lede/trunk package/lean/p7zip
 
 svn co https://github.com/liuran001/openwrt-packages.git package/openwrt-packages
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall package/luci-app-passwall
-#rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall  package/luci-app-passwall
+svn co https://github.com/kenzok8/openwrt-packages/trunk/filebrowser package/filebrowser
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-filebrowser package/luci-app-filebrowser
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall2 package/luci-app-passwall2
+
+svn co https://github.com/linkease/istore-ui/trunk/app-store-ui package/app-store-ui
+svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
+sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-store/Makefile
 
 # themes
 git clone https://github.com/Leo-Jo-My/luci-theme-Butterfly package/luci-theme-Butterfly
