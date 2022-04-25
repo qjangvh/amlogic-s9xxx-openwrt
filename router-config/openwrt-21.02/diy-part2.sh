@@ -35,14 +35,14 @@ rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/luci/applications/luci-app-wrtbwmon
 rm -rf feeds/packages/net/smartdns
 
-git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
-git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
-git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
-svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
+#git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
+#git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
+#git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
+#git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
+#svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
 svn co https://github.com/HoldOnBro/packages/trunk/luci-app-adblock-plus package/luci-app-adblock-plus
-git clone https://github.com/iwrt/luci-app-ikoolproxy package/luci-app-ikoolproxy
+#git clone https://github.com/iwrt/luci-app-ikoolproxy package/luci-app-ikoolproxy
 
 #luci-app-openclash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
@@ -51,17 +51,10 @@ pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
 
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall package/luci-app-passwall
-svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 package/luci-app-passwall2
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
-svn co https://github.com/kenzok8/openwrt-packages/trunk/microsocks package/microsocks
-svn co https://github.com/kenzok8/openwrt-packages/trunk/naiveproxy package/naiveproxy
-svn co https://github.com/kenzok8/openwrt-packages/trunk/redsocks2 package/redsocks2
-svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/smartdns
-svn co https://github.com/kenzok8/openwrt-packages/trunk/tcping package/tcping
-svn co https://github.com/kenzok8/openwrt-packages/trunk/mosdns package/mosdns
-
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
+git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
+rm -rf package/openwrt-packages/luci-app-openclash
+rm -rf package/openwrt-packages/luci-app-amlogic
+rm -rf package/openwrt-packages/luci-app-serverchan
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
@@ -75,8 +68,8 @@ cd ..
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 
 #file browser
-svn co https://github.com/kenzok8/openwrt-packages/trunk/filebrowser package/filebrowser
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-filebrowser package/luci-app-filebrowser
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/filebrowser package/filebrowser
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-filebrowser package/luci-app-filebrowser
 git clone https://github.com/silime/luci-app-kodexplorer.git package/luci-app-kodexplorer
 
 svn co https://github.com/linkease/istore-ui/trunk/app-store-ui package/app-store-ui
@@ -96,16 +89,16 @@ git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/l
 git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-opentopd
 
 #argon-config
-git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-rm -rf feeds/luci/themes/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+#rm -rf feeds/luci/themes/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
 #luci-app-advanced
-git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
+#git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
 
-git clone https://github.com/helmiau/helmiwrt-packages.git package/helmiwrt-packages0
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' {}
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' {}
+git clone https://github.com/helmiau/helmiwrt-packages.git package/helmiwrt-packages
+#find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' {}
+#find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' {}
 
 # coolsnowwolf default software package replaced with Lienol related software package
 # rm -rf feeds/packages/utils/{containerd,libnetwork,runc,tini}
