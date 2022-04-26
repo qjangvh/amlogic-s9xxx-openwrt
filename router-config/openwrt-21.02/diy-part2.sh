@@ -55,6 +55,7 @@ git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packag
 rm -rf package/openwrt-packages/luci-app-openclash
 rm -rf package/openwrt-packages/luci-app-amlogic
 rm -rf package/openwrt-packages/luci-app-serverchan
+rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
