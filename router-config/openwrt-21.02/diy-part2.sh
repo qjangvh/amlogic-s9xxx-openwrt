@@ -98,6 +98,8 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-ope
 #git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
 
 git clone https://github.com/helmiau/helmiwrt-packages.git package/helmiwrt-packages
+rm -rf package/helmiwrt-packages/luci-app-tinyfm
+rm -rf package/helmiwrt-packages/luci-app-netmon
 #find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' {}
 #find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' {}
 
