@@ -63,7 +63,7 @@ jobs:
         id: feeds
         run: |
           cd $OPENWRTROOT
-          chmod +x ../build-ipk/*.sh
+          chmod +x ../router-config/lede-master/*.sh
           ../$DIY1_SH
 
       - name: Load Custom Configuration
