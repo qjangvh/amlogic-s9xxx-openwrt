@@ -40,42 +40,42 @@ rm -rf feeds/packages/net/smartdns
 #git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 #git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 #svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
-git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
-svn co https://github.com/HoldOnBro/packages/trunk/luci-app-adblock-plus package/luci-app-adblock-plus
+#git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
+#svn co https://github.com/HoldOnBro/packages/trunk/luci-app-adblock-plus package/luci-app-adblock-plus
 #git clone https://github.com/iwrt/luci-app-ikoolproxy package/luci-app-ikoolproxy
 
 #luci-app-openclash
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+#svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # 编译 po2lmo (如果有po2lmo可跳过)
-pushd package/luci-app-openclash/tools/po2lmo
-make && sudo make install
-popd
+#pushd package/luci-app-openclash/tools/po2lmo
+#make && sudo make install
+#popd
 
 git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
-rm -rf package/openwrt-packages/luci-app-openclash
-rm -rf package/openwrt-packages/luci-app-amlogic
-rm -rf package/openwrt-packages/luci-app-serverchan
-rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
-git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
+#rm -rf package/openwrt-packages/luci-app-openclash
+#rm -rf package/openwrt-packages/luci-app-amlogic
+#rm -rf package/openwrt-packages/luci-app-serverchan
+#rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
+#git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
-svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
-git clone https://github.com/brvphoenix/luci-app-wrtbwmon
-cd luci-app-wrtbwmon
-git reset --hard ff7773abbf71120fc39a276393b29ba47353a7e2
-cp -r luci-app-wrtbwmon ../package/
-cd ..
+#svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
+#git clone https://github.com/brvphoenix/luci-app-wrtbwmon
+#cd luci-app-wrtbwmon
+#git reset --hard ff7773abbf71120fc39a276393b29ba47353a7e2
+#cp -r luci-app-wrtbwmon ../package/
+#cd ..
 
-#svn co https://github.com/liuran001/openwrt-packages.git package/openwrt-packages
+svn co https://github.com/liuran001/openwrt-packages.git package/openwrt-packages
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 
 #file browser
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/filebrowser package/filebrowser
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-filebrowser package/luci-app-filebrowser
-git clone https://github.com/silime/luci-app-kodexplorer.git package/luci-app-kodexplorer
+#git clone https://github.com/silime/luci-app-kodexplorer.git package/luci-app-kodexplorer
 
-svn co https://github.com/linkease/istore-ui/trunk/app-store-ui package/app-store-ui
-svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
-sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-store/Makefile
+#svn co https://github.com/linkease/istore-ui/trunk/app-store-ui package/app-store-ui
+#svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
+#sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-store/Makefile
 
 # themes
 git clone https://github.com/Leo-Jo-My/luci-theme-Butterfly package/luci-theme-Butterfly
