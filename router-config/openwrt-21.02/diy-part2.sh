@@ -53,9 +53,10 @@ rm -rf feeds/packages/net/smartdns
 
 git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
 #rm -rf package/openwrt-packages/luci-app-openclash
-#rm -rf package/openwrt-packages/luci-app-amlogic
-#rm -rf package/openwrt-packages/luci-app-serverchan
-#rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
+rm -rf package/openwrt-packages/luci-app-amlogic
+rm -rf package/openwrt-packages/luci-app-serverchan
+rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
+rm -rf package/openwrt-packages/UnblockNeteaseMusic
 #git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
 #svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
@@ -65,7 +66,7 @@ git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packag
 #cp -r luci-app-wrtbwmon ../package/
 #cd ..
 
-svn co https://github.com/liuran001/openwrt-packages.git package/openwrt-packages
+#svn co https://github.com/liuran001/openwrt-packages.git package/openwrt-packages
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 
 #file browser
