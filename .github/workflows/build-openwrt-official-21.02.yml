@@ -21,7 +21,9 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   #REPO_BRANCH: openwrt-21.02.0
-  REPO_BRANCH: v21.02.3
+  #REV_HASH=""
+  #REV_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+  REPO_BRANCH: git checkout v21.02.2
   FEEDS_CONF: router-config/openwrt-21.02/feeds.conf.default
   CONFIG_FILE: router-config/openwrt-21.02/.config
   DIY_P1_SH: router-config/openwrt-21.02/diy-part1.sh
