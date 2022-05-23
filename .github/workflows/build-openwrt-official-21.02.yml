@@ -60,7 +60,7 @@ jobs:
         cd openwrt
         git branch -a
         git tag
-        git checkout REPO_CHECKUOT
+        git checkout $REPO_CHECKUOT
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
