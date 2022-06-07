@@ -13,7 +13,7 @@ inputs:
   amlogic_kernel:
     description: 'Choose kernel.'
     required: false
-    default: '5.15.25_5.4.180'
+    default: '5.15.41_5.4.188'
   auto_kernel:
     description: 'Auto use the latest kernel.'
     required: false
@@ -21,7 +21,7 @@ inputs:
   amlogic_size:
     description: 'Choose rootfs size.'
     required: false
-    default: '1024'
+    default: '2048'
   armvirt64_path:
     description: 'Choose armvirt64 file path.'
     required: false
