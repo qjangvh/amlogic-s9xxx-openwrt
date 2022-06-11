@@ -63,10 +63,10 @@ depends_repo="https://github.com/ophub/amlogic-s9xxx-armbian/tree/main/build-arm
 # Install/Update script files download repository
 script_repo="https://github.com/ophub/luci-app-amlogic/tree/main/luci-app-amlogic/root/usr/sbin"
 # Kernel files download repository
-kernel_repo="https://github.com/ophub/kernel/tree/main/pub"
+kernel_repo="https://github.com/qjangvh/amlogic-s9xxx-openwrt/tree/main/kernel/tree/main"
 version_branch="stable"
 auto_kernel="true"
-build_kernel=("5.15.41" "5.4.188")
+build_kernel=("5.10.121" "5.4.188")
 # Set supported SoC
 build_openwrt=(
     "s922x" "s922x-n2" "s922x-reva" "a311d"
