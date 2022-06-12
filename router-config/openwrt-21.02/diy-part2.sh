@@ -57,11 +57,11 @@ rm -rf package/openwrt-packages/luci-app-amlogic
 rm -rf package/openwrt-packages/luci-app-serverchan
 rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
 rm -rf package/openwrt-packages/UnblockNeteaseMusic
-#rm -rf package/openwrt-packages/luci-app-filebrowser
+rm -rf package/openwrt-packages/luci-app-filebrowser
 rm -rf package/openwrt-packages/luci-app-fileassistant
 rm -rf package/openwrt-packages/luci-app-dockerman
 rm -rf package/openwrt-packages/luci-app-store
-#rm -rf package/openwrt-packages/filebrowser
+rm -rf package/openwrt-packages/filebrowser
 rm -rf package/openwrt-packages/luci-app-ddnsto
 #rm -rf package/openwrt-packages/luci-app-clash
 #git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
@@ -98,9 +98,9 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-pass
 #git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-opentopd
 
 #argon-config
-#git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 #rm -rf feeds/luci/themes/luci-theme-argon
-#git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
 #luci-app-advanced
 #git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
