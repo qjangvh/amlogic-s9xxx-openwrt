@@ -45,24 +45,24 @@ svn co https://github.com/hubutui/p7zip-lede/trunk package/lean/p7zip
 #git clone https://github.com/iwrt/luci-app-ikoolproxy package/luci-app-ikoolproxy
 
 #luci-app-openclash
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+#svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # 编译 po2lmo (如果有po2lmo可跳过)
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
 
-git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
-rm -rf package/openwrt-packages/luci-app-openclash
-rm -rf package/openwrt-packages/luci-app-amlogic
-rm -rf package/openwrt-packages/luci-app-serverchan
-rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
-rm -rf package/openwrt-packages/UnblockNeteaseMusic
-rm -rf package/openwrt-packages/luci-app-filebrowser
-rm -rf package/openwrt-packages/luci-app-fileassistant
-rm -rf package/openwrt-packages/luci-app-dockerman
-rm -rf package/openwrt-packages/luci-app-store
-rm -rf package/openwrt-packages/filebrowser
-rm -rf package/openwrt-packages/luci-app-ddnsto
+#git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
+#rm -rf package/openwrt-packages/luci-app-openclash
+#rm -rf package/openwrt-packages/luci-app-amlogic
+#rm -rf package/openwrt-packages/luci-app-serverchan
+#rm -rf package/openwrt-packages/luci-app-unblockneteasemusic
+#rm -rf package/openwrt-packages/UnblockNeteaseMusic
+#rm -rf package/openwrt-packages/luci-app-filebrowser
+#rm -rf package/openwrt-packages/luci-app-fileassistant
+#rm -rf package/openwrt-packages/luci-app-dockerman
+#rm -rf package/openwrt-packages/luci-app-store
+#rm -rf package/openwrt-packages/filebrowser
+#rm -rf package/openwrt-packages/luci-app-ddnsto
 #rm -rf package/openwrt-packages/luci-app-clash
 #git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 # cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
@@ -74,7 +74,7 @@ rm -rf package/openwrt-packages/luci-app-ddnsto
 #cd ..
 
 #svn co https://github.com/liuran001/openwrt-packages.git package/openwrt-packages
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
+#git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 
 #file browser
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/filebrowser package/filebrowser
