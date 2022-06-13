@@ -45,9 +45,17 @@ svn co https://github.com/hubutui/p7zip-lede/trunk package/lean/p7zip
 #git clone https://github.com/iwrt/luci-app-ikoolproxy package/luci-app-ikoolproxy
 
 #luci-app-openclash
-#svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+mkdir package/luci-app-openclash
+cd package/luci-app-openclash
+git init
+git remote add -f origin https://github.com/vernesong/OpenClash.git
+git config core.sparsecheckout true
+echo "luci-app-openclash" >> .git/info/sparse-checkout
+git pull --depth 1 origin master
+git branch --set-upstream-to=origin/master master
+
 # 编译 po2lmo (如果有po2lmo可跳过)
-pushd package/luci-app-openclash/tools/po2lmo
+pushd luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
 
@@ -73,8 +81,8 @@ popd
 #cp -r luci-app-wrtbwmon ../package/
 #cd ..
 
-#svn co https://github.com/liuran001/openwrt-packages.git package/openwrt-packages
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
+svn co https://github.com/liuran001/openwrt-packages/branches/packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 
 #file browser
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/filebrowser package/filebrowser
@@ -98,9 +106,9 @@ popd
 #git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-opentopd
 
 #argon-config
-git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+#git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 #rm -rf feeds/luci/themes/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
 #luci-app-advanced
 #git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
