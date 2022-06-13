@@ -29,12 +29,6 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 # Add luci-app-amlogic
 svn co https://github.com/ophub/luci-app-amlogic/trunk package/luci-app-amlogic
 
-# Add p7zip
-svn co https://github.com/hubutui/p7zip-lede/trunk package/lean/p7zip
-#rm -rf feeds/luci/applications/luci-app-dockerman
-#rm -rf feeds/luci/applications/luci-app-wrtbwmon
-#rm -rf feeds/packages/net/smartdns
-
 #git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
 #git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 #git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
