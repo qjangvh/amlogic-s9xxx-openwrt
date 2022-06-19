@@ -21,7 +21,7 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-21.02
-  REPO_CHECKUOT: v21.02.3
+  REPO_CHECKUOT: v21.02.2
   FEEDS_CONF: router-config/openwrt-21.02/feeds.conf.default
   CONFIG_FILE: router-config/openwrt-21.02/.config
   DIY_P1_SH: router-config/openwrt-21.02/diy-part1.sh
@@ -58,7 +58,7 @@ jobs:
         #git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         git clone $REPO_URL openwrt
         cd openwrt
-        git checkout v21.02.3
+        git checkout v21.02.2
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
@@ -99,15 +99,10 @@ jobs:
         make -j$(($(nproc) + 1)) V=s || make -j1 || make -j1 V=s
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=$(cat DEVICE_NAME)" >> $GITHUB_ENV
+        cp -rf $(find openwrt/bin/) bin/ && sync
+        sudo tar -czf bin.tar.gz bin && sudo mv -f bin.tar.gz out/ && sync
         echo "FILE_DATE=$(date +"%m.%d.%H%M")" >> $GITHUB_ENV
         echo "::set-output name=status::success"
-        
-    - name: Zip Files
-      if: steps.compile.outputs.COMPILE_STATUS == 'success' && !cancelled()
-      run: |
-        zip -r bin.zip bin
-        echo "::set-output name=status::success"
-        echo "::set-output name=ORGANIZE_STATUS::success"
 
     - name: Build OpenWrt firmware
       if: steps.compile.outputs.status == 'success' && !cancelled()
