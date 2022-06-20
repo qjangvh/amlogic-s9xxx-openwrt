@@ -58,7 +58,7 @@ jobs:
         #git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         git clone $REPO_URL openwrt
         cd openwrt
-        git checkout v21.02.2
+        git checkout $REPO_CHECKUOT
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
@@ -99,11 +99,16 @@ jobs:
         make -j$(($(nproc) + 1)) V=s || make -j1 || make -j1 V=s
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=$(cat DEVICE_NAME)" >> $GITHUB_ENV
-        [ -d bin ] || mkdir -p bin
-        cp -rf $(find openwrt/bin/) bin/ && sync
-        sudo tar -czf bin.tar.gz bin && sudo mv -f bin.tar.gz out/ && sync
+        sudo tar -czf bin.tar.gz bin
         echo "FILE_DATE=$(date +"%m.%d.%H%M")" >> $GITHUB_ENV
         echo "::set-output name=status::success"
+        
+    - name: Upload bin directory
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+      with:
+        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        path: openwrt/*/*/bin.tar.gz
 
     - name: Build OpenWrt firmware
       if: steps.compile.outputs.status == 'success' && !cancelled()
@@ -128,18 +133,11 @@ jobs:
         echo "::set-output name=release_tag::zip"
         echo "::set-output name=status::success"
         
-    - name: Upload bin directory
-      uses: actions/upload-artifact@master
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      with:
-        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: openwrt/bin/targets/*/*/bin.tar.gz
-        
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       if: steps.build.outputs.status == 'success' && !cancelled()
       with:
-        tag: openwrt_s9xxx_official_${{ env.PACKAGED_OUTPUTDATE }}
+        tag: openwrt_s9xxx_official$REPO_CHECKUOT_${{ env.PACKAGED_OUTPUTDATE }}
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
