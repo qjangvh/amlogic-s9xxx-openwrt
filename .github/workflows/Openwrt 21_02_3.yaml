@@ -1,0 +1,18 @@
+wget https://downloads.openwrt.org/releases/21.02.3/targets/armvirt/64/openwrt-imagebuilder-21.02.3-armvirt-64.Linux-x86_64.tar.xz
+tar -J -x -f openwrt-imagebuilder-21.02.3-armvirt-64.Linux-x86_64.tar.xz openwrt
+cd openwrt
+
+
+make image PROFILE="Default" PACKAGES="\
+cgi-io libiwinfo libiwinfo-data libiwinfo-lua liblua liblucihttp liblucihttp-lua \
+libubus20210630 libnettle8 kmod-ipt-ipset libnetfilter-conntrack3 libnfnetlink0 kmod-nf-conntrack-netlink libmnl0 \
+libubus-lua lua luci luci-app-firewall luci-app-opkg luci-base luci-i18n-base-en luci-lib-base \
+luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-mod-network \
+luci-mod-status luci-mod-system luci-proto-ipv6 luci-proto-ppp luci-ssl \
+luci-theme-bootstrap px5g-wolfssl rpcd rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-luci \
+rpcd-mod-rrdns uhttpd uhttpd-mod-ubus luci-compat \
+ath9k-htc-firmware btrfs-progs hostapd hostapd-utils kmod-ath kmod-ath9k kmod-ath9k-common \
+kmod-ath9k-htc kmod-cfg80211 kmod-crypto-acompress kmod-crypto-crc32c kmod-crypto-hash \
+kmod-fs-btrfs kmod-mac80211 wireless-tools wpa-cli wpa-supplicant \
+kmod-rtl8xxxu kmod-usb-core nano-full \
+" FILES="files"
